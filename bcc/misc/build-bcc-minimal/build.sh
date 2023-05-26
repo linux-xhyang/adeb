@@ -25,7 +25,7 @@ rm -rf $BLD_DIR && mkdir -p $BLD_DIR
 sudo qemu-debootstrap \
     --arch arm64 \
     --include=procps,git,clang-7,cmake,llvm-7-dev,libclang-7-dev,libelf-dev,libfl-dev,libunwind-dev,libdw-dev,git,libtool,autoconf,make,cmake,iperf,arping,ethtool,flex,bison,python,clang-7,python-netaddr,python-pyroute2 \
-    --variant=minbase $DIST $BLD_DIR http://ftp.us.debian.org/debian
+    --variant=minbase $DIST $BLD_DIR http://ftp.cn.debian.org/debian
 
 pushd $BLD_DIR
 git clone --recurse-submodules https://github.com/iovisor/bcc.git bcc-master
@@ -38,7 +38,7 @@ sudo chroot $BLD_DIR /build-on-target.sh
 qemu-debootstrap \
    --arch arm64 \
    --include=libelf1,python,python-netaddr,python-pyroute2 \
-   --variant=minbase $DIST $RUN_DIR http://ftp.us.debian.org/debian
+   --variant=minbase $DIST $RUN_DIR http://ftp.cn.debian.org/debian
 
 # Sync the built BCC from the build chroot onto the run chroot
 rsync -rav $BLD_DIR/bcc-master/build/future-usr/ $RUN_DIR/usr/

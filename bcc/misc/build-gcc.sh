@@ -18,7 +18,7 @@ rm -rf $BLD_DIR && mkdir -p $BLD_DIR
 sudo qemu-debootstrap \
     --arch amd64 \
     --include=gcc,make,libc6-dev \
-    --variant=minbase $DIST $BLD_DIR http://ftp.us.debian.org/debian
+    --variant=minbase $DIST $BLD_DIR http://ftp.cn.debian.org/debian
 
 # Clean up the chroot for whatever is not needed
 # find   $BLD_DIR -name "*.a" |xargs rm -rf

@@ -3,6 +3,6 @@
 
 cd bcc-master
 rm -rf build && mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=./future-usr -DCMAKE_C_COMPILER=clang-7 -DCMAKE_CXX_COMPILER=clang++-7
+cmake .. -DCMAKE_INSTALL_PREFIX=./future-usr -DCMAKE_C_COMPILER=clang-11 -DCMAKE_CXX_COMPILER=clang++-11
 make -j90
 make install
